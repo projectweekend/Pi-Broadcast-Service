@@ -19,6 +19,7 @@ class GPIOBasicBroadcastService(Publisher):
         self._pin_event_handler = GPIOBasicBroadcastEventHandler(self._broadcast)
 
     def _broadcast(self, message):
+        print(message)
         return self.send(self._device_key, message)
 
     def start(self):
