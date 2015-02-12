@@ -15,3 +15,6 @@ class Publisher(object):
             exchange=self._exchange,
             routing_key=routing_key,
             body=json.dumps(message))
+
+    def stop(self):
+        self._connection.close()
