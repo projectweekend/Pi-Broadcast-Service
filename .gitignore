@@ -57,3 +57,5 @@ target/
 *.sublime-project
 *.sublime-workspace
 test_broadcast.py
+
+MANIFEST
