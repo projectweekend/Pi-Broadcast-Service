@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='Pi-Control-Service',
+    name='Pi-Broadcast-Service',
     version='0.0.1',
     author='Brian Hines',
     author_email='brian@projectweekend.net',
