@@ -9,6 +9,7 @@ class Publisher(object):
         self._exchange = exchange
         self._connection = pika.BlockingConnection(pika.URLParameters(self._rabbit_url))
         self._channel = self._connection.channel()
+        self._channel.exchange_declare(exchange=self._exchange, type='direct')
 
     def send(self, routing_key, message):
         self._channel.basic_publish(
