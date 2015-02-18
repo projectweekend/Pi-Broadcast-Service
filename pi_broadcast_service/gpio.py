@@ -1,13 +1,14 @@
 import time
-from rabbit import Publisher
-from handler import GPIOBasicBroadcastEventHandler
+from pika_pack import Sender
 from pi_pin_manager import PinManager
+
+from handler import GPIOBasicBroadcastEventHandler
 
 
 BROADCAST_EXCHANGE = 'gpio_broadcast'
 
 
-class GPIOBasicBroadcastService(Publisher):
+class GPIOBasicBroadcastService(Sender):
 
     def __init__(self, rabbit_url, device_key, pin_config):
         super(GPIOBasicBroadcastService, self).__init__(
