@@ -1,5 +1,5 @@
 import time
-from pika_pack import Sender
+from pika_pack import Broadcaster
 from pi_pin_manager import PinManager
 
 from handler import GPIOBasicBroadcastEventHandler
@@ -8,7 +8,7 @@ from handler import GPIOBasicBroadcastEventHandler
 BROADCAST_EXCHANGE = 'gpio_broadcast'
 
 
-class GPIOBasicBroadcastService(Sender):
+class GPIOBasicBroadcastService(Broadcaster):
 
     def __init__(self, rabbit_url, device_key, pin_config):
         super(GPIOBasicBroadcastService, self).__init__(
